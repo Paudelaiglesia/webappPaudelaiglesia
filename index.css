@@ -204,3 +204,6 @@ body {
 #prediccions {
     font-size: 3vh;
 }
+#seccio_5 {
+    flex-direction: row;
+}

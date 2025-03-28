@@ -189,6 +189,9 @@ body {
     #llista_fotos {
         height: 70vmin;
     }
+    #seccio_5 {
+        flex-direction: row;
+    }
 }
 #webcam-container {
     margin: 2vh;
@@ -204,6 +207,4 @@ body {
 #prediccions {
     font-size: 3vh;
 }
-#seccio_5 {
-    flex-direction: row;
-}
+

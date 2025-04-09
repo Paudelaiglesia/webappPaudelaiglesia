@@ -151,3 +151,36 @@ function mostra_foto(id) {
     document.getElementById("menu").style.display = "none";    // s'oculta el menú
     document.getElementById("div_gran").style.display = "flex";    // es mostra el contenidor de la foto a pantalla completa
 }
+function retorn_a_seccio() {
+    document.getElementById("superior").classList.remove("ocult");    // s'elimina la classe provisional del contenidor superior
+    document.getElementById("menu").style.display = "flex";    // es mostra el menú
+    document.getElementById("div_gran").style.display = "none";    // s'oculta el contenidor de pantalla completa
+    if (seccio_origen == 2) {    // càmera
+        document.getElementById("seccio_2").style.display = "flex";
+    } else {    // galeria
+        document.getElementById("seccio_3").style.display = "flex";
+    }
+}
+if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
+    omple_llista();
+}
+function omple_llista() {
+    let llista = '';
+    indexedDB.open("Dades").onsuccess = event => {
+        event.target.result.transaction(["Fotos"], "readonly").objectStore("Fotos").index("Usuari_index").getAll(usuari).onsuccess = event => {
+            dades = event.target.result;
+            for (i in dades) {    // per cada foto
+                llista+= '<div class="llista_fila"><div><img src="';    // es crea un contenidor de fila
+                llista+= dades[i]["Foto"];    // miniatura de la foto
+                llista+= '" onclick="mostra_foto(';    // atribut d'esdeveniment (mostrar la foto)
+                llista+= dades[i]["ID"];    // valor numèric que identifica el registre de la foto
+                llista+= ')" /></div><span>'; 
+                llista+= dades[i]["Data"];    // data i hora de la foto
+                llista+= '</span><i class="fa-solid fa-trash" onclick="esborra_foto(';    // atribut d'esdeveniment (esborrar la foto)
+                llista+= dades[i]["ID"];
+                llista+= ')"></i></div>';         
+            }
+            document.getElementById("llista_fotos").innerHTML = llista;    // s'ocupa el contenidor "llista_fotos" amb el fragment HTML creat
+        }
+    }
+}

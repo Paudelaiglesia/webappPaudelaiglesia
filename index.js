@@ -78,6 +78,10 @@ function tanca_sessio() {
     }
 }
 window.onload = () => { 
+    mapa = L.map("seccio_4").setView([41.72, 1.82], 8);    // assigna el mapa a la secció, centrat en el punt i amb el nivell de zoom
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {    // capa d'OpenStreetMap
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'    // autoria de la capa
+}).addTo(mapa);    // s'afegeix la capa al mapa
     let base_de_dades = storage.getItem("base_de_dades");   
     if(base_de_dades == null) {
         indexedDB.open("Dades").onupgradeneeded = event => {   
@@ -208,10 +212,6 @@ let vegueries = [[41.39, 2.17, "Àmbit metropolità (Barcelona)"],    // llista 
 for (i in vegueries) {    // per cada element de la llista
     L.marker([vegueries[i][0], vegueries[i][1]],{title:vegueries[i][2]}).addTo(mapa);
 }
-mapa = L.map("seccio_4").setView([41.72, 1.82], 8);    // assigna el mapa a la secció, centrat en el punt i amb el nivell de zoom
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {    // capa d'OpenStreetMap
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'    // autoria de la capa
-}).addTo(mapa);    // s'afegeix la capa al mapa
 if (num_boto == 4) {
     mapa.invalidateSize();
     if (typeof geoID === "undefined") {    // si encara no s'han obtingut les dades de localització del dispositiu

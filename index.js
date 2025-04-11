@@ -17,6 +17,12 @@ function canvia_seccio(num_boto) {
             boto.style.backgroundColor = "#950E17";
             seccio.style.display = "none";    // s'oculten les seccions inactives
         }
+        if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
+            omple_llista();
+        }
+        if (num_boto == 4) {
+            mapa.invalidateSize();
+        }
     }
 }
 function inici_sessio() {
@@ -164,9 +170,7 @@ function retorn_a_seccio() {
         document.getElementById("seccio_3").style.display = "flex";
     }
 }
-if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
-    omple_llista();
-}
+
 function omple_llista() {
     let llista = '';
     indexedDB.open("Dades").onsuccess = event => {
@@ -197,9 +201,7 @@ function esborra_foto(id) {
         };
     }
  }
- if (num_boto == 4) {
-    mapa.invalidateSize();
-}
+
 L.marker([41.39, 2.17], {title:"Barcelona"}).addTo(mapa);    // l'opció "title" fa que es mostri el text "Barcelona" quan es passa el ratolí sobre el marcador
 let vegueries = [[41.39, 2.17, "Àmbit metropolità (Barcelona)"],    // llista on cada element és una llista amb els valors de latitud, longitud i nom de vegueria com a elements
                  [42.17, 0.89, "Alt Pirineu i Aran (Tremp)"],

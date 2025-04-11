@@ -78,10 +78,6 @@ function tanca_sessio() {
     }
 }
 window.onload = () => { 
-    mapa = L.map("seccio_4").setView([41.72, 1.82], 8);    // assigna el mapa a la secció, centrat en el punt i amb el nivell de zoom
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {    // capa d'OpenStreetMap
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'    // autoria de la capa
-}).addTo(mapa);    // s'afegeix la capa al mapa
     let base_de_dades = storage.getItem("base_de_dades");   
     if(base_de_dades == null) {
         indexedDB.open("Dades").onupgradeneeded = event => {   
@@ -105,6 +101,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {    // capa d'Ope
             }
         }
     });
+    mapa = L.map("seccio_4").setView([41.72, 1.82], 8);    // assigna el mapa a la secció, centrat en el punt i amb el nivell de zoom
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {    // capa d'OpenStreetMap
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'    // autoria de la capa
+    }).addTo(mapa);    // s'afegeix la capa al mapa
 }
 function desa_foto() {
     let nou_registre = {    // contingut del nou registre de la base de dades

@@ -18,6 +18,8 @@ function canvia_seccio(num_boto) {
             seccio.style.display = "none";    // s'oculten les seccions inactives
         }
     }
+    if (num_boto == 4) {
+        mapa.invalidateSize();
 }
 function inici_sessio() {
     nom = document.getElementById("nom_usuari").value;    // la propietat "value" d'un quadre de text correspon al text escrit per l'usuari
@@ -196,9 +198,7 @@ function esborra_foto(id) {
             };
         };
     }
-}
-if (num_boto == 4) {
-    mapa.invalidateSize();
+ }
 }
 L.marker([41.39, 2.17], {title:"Barcelona"}).addTo(mapa);    // l'opció "title" fa que es mostri el text "Barcelona" quan es passa el ratolí sobre el marcador
 let vegueries = [[41.39, 2.17, "Àmbit metropolità (Barcelona)"],    // llista on cada element és una llista amb els valors de latitud, longitud i nom de vegueria com a elements

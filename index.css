@@ -20,9 +20,7 @@ body {
     font-size: 4vmax;    /* mida d'un 4% respecte l'alçària de la pantalla */
     color: white;    /* color del text */
     background-color: #95930e;    /* color de fons */
-    .ocult {
-        display: none !important;    /* amb prioritat sobre les declaracions condicionals segons l'orientació */
-    }
+    
 }
 .seccio {
     flex: 1;    /* les seccions ocupen tot l'espai disponible */
@@ -82,6 +80,9 @@ body {
     }
     #llista_fotos {
         height: 70vmin;
+    }
+    .ocult {
+        display: none !important;    /* amb prioritat sobre les declaracions condicionals segons l'orientació */
     }
 }
 #seccio_0 {

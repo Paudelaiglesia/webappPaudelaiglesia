@@ -86,7 +86,7 @@ body {
 }
 #icona_camera {
     font-size: 40vmin;
-    color: #0e1095;
+    color: #0e6a95;
 }
 #foto {
     max-width: 60vmin;    /* dimensions màximes per a la prveisualització de les fotos */
@@ -205,7 +205,7 @@ body {
 }
 .llista_fila i {    /* icona per esborrar la foto */
     flex: 1;
-    color: #0e1095;
+    color: #0e6a95;
     font-size: 4vmax !important;
     cursor: pointer;
 }

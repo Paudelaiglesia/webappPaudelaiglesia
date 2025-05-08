@@ -9,7 +9,7 @@ body {
     min-height: 100svh;    /* per a navegadors on la declaració anterior no és precisa */
     min-height: -webkit-fill-available;    
     margin: 0px;    /* elimina tots els marges del document */
-    font-family: sans-serif;    /* un tipus de lletra adient per a llocs web */
+    font-family: calibri;    /* un tipus de lletra adient per a llocs web */
     background-color: #0e9095;    /* color de fons en format #RRGGBB */
 }
 #superior {
@@ -20,6 +20,9 @@ body {
     font-size: 4vmax;    /* mida d'un 4% respecte l'alçària de la pantalla */
     color: white;    /* color del text */
     background-color: #95930e;    /* color de fons */
+    .ocult {
+        display: none !important;    /* amb prioritat sobre les declaracions condicionals segons l'orientació */
+    }
     
 }
 .seccio {
@@ -243,9 +246,7 @@ body {
     #llista_fotos {
         height: 70vmin;
     }
-    .ocult {
-        display: none !important;    /* amb prioritat sobre les declaracions condicionals segons l'orientació */
-    }
+
 }
 
 

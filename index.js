@@ -251,7 +251,7 @@ if (typeof geoID === "undefined") {
 
 }
 async function inicia_video() {
-    const codi_model = "eMCrTw1Tq0"    // substitueix els asteriscs pel codi del model d'IA que vas crear en una activitat anterior
+    const codi_model = "_fZ5F5dcb/"    // substitueix els asteriscs pel codi del model d'IA que vas crear en una activitat anterior
     const tmURL = "https://teachablemachine.withgoogle.com/models/" + codi_model;
     const modelURL = tmURL + "/model.json";
     const metadataURL = tmURL + "/metadata.json";

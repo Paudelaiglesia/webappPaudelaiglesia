@@ -2,6 +2,10 @@ let validat = false;    // variable que permet saber si hi ha algun usuari valid
 let nom, contrasenya;
 let scriptURL = "https://script.google.com/macros/s/AKfycbzvBuAUpE6oqCnFAdmjfzB59wvfTGa5UPuphkkANaelo_OcW_NIY-f-f1wI_ZAIUrpTEQ/exec"    // s'ha de substituir la cadena de text per la URL del script
 let model, webcam, prediccions, maxPrediccions;
+let canvas_creat = false;
+let diagrama;
+let valors = [[],[]];
+
 function canvia_seccio(num_boto) {
     const menu = document.getElementById("menu");
     const num_botons = menu.children.length;    // el nombre de botons dins de l'element "menu"

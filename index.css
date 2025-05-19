@@ -212,6 +212,18 @@ body {
     font-size: 4vmax !important;
     cursor: pointer;
 }
+#seccio_2 {
+    flex-direction: row;
+}
+#seccio_3 {
+    flex-direction: row;
+}
+#seccio_4 {
+    flex-direction: row;
+}
+#seccio_6 {
+    flex-direction: row;
+}
 @media (orientation: landscape) {
     body {
         flex-direction: row;    /* sobreescriu la declaració flex-direction: column; */
